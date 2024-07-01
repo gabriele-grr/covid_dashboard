@@ -1,0 +1,74 @@
+/* COLORS */
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+img,
+picture,
+video,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+select,
+textarea,
+input {
+  font: inherit;
+}
+
+/* COMPONENTS */
+nav {
+  border-right: 3px solid rgb(21, 21, 21);
+}
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  flex-direction: column;
+  align-items: center;
+}
+nav li {
+  margin-bottom: 1rem;
+}
+nav li img {
+  max-height: 8rem;
+  max-width: 8rem;
+}
+nav li p {
+  text-align: center;
+  margin-top: 0.5rem;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+  nav ul {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
+body {
+  background-color: rgb(241, 241, 241);
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+main {
+  height: 100vh;
+}
+
+button {
+  background-color: rgb(9, 93, 126);
+  padding: 0.5rem;
+  border-radius: 20px;
+  border: none;
+}
+
+button:hover {
+  background-color: rgb(19, 143, 193);
+  transition: 0.4s;
+}/*# sourceMappingURL=style.css.map */

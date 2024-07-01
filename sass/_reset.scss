@@ -1,0 +1,20 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+img,
+picture,
+video,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+button,
+select,
+textarea,
+input {
+    font: inherit;
+}
