@@ -1,66 +1,73 @@
 @use 'variables';
 @use 'reset';
 
-nav {
-
-    header {
-        text-align: center;
-        position: relative;
-        margin-bottom: 7rem;
-
-        img {
-            position: absolute;
-            width: 7rem;
-            height: 7rem;
-            right: 0;
-            left: 0;
-            margin: auto;
-            z-index: -1;
-            top: -1.5rem;
-        }
-
-        h1 {
-            font-size: 1.5rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            color: variables.$main-color;
-            text-shadow: 1px 1px 2px variables.$text-main-color;
-        }
-    }
-
-    ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    li {
-        img {
-            width: 5rem;
-            height: 5rem;
-        }
-
-        p {
-            text-align: center;
-            margin-top: 0.5rem;
-            font-weight: bold;
-        }
-
-        margin-bottom: 1rem;
-        
-    }
-
-    border-right: 3px solid variables.$text-main-color;
+aside {
+    height: 100vh;
 }
 
-@media screen and (max-width: 767px) {
-    nav {
-        
-        ul {
-            flex-direction: row;
-            justify-content: space-around;
+.top {
+
+    margin-top: 1rem;
+
+    #close-btn {
+        display: none;
+    }
+
+    .logo {
+
+        margin-bottom: 2rem;
+
+        img {
+            height: 2rem;
+            width: 2rem;
+            display: inline;
+            position: relative;
+            top: 8px;
+            margin-right: 0.3rem;
         }
+
+        h2 {
+            display: inline;
+            font-size: 1.15rem;
+            color: variables.$main-color;
+        }
+    }
+}
+
+.sidebar {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    a {
+        
+        img {
+            height: 5rem;
+            width: 5rem;
+            background-color: variables.$main-color-dark;
+            padding: 0.5rem;
+            border-radius: 12px;
+            margin-bottom: 0.5rem;
+            transition: all 400ms ease;
+        }
+    }
+
+    a.active {
+        img {
+            background-color: variables.$main-color;
+        }
+    }
+
+    a:hover {
+        img {
+            background-color: variables.$main-color-light;
+        }
+    }
+
+    p {
+        text-align: center;
+        font-weight: 600;
+        margin-bottom: 2rem;
     }
 }
