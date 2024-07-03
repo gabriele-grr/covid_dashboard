@@ -17,7 +17,7 @@
             color: variables.$main-color;
         }
 
-        [class|="pie-legend"] {
+        %pie-legend {
             width: 0.65rem;
             height: 0.65rem;
             display: inline-block;
@@ -25,14 +25,17 @@
         }
 
         .pie-legend-dead {
+            @extend %pie-legend;
             background-color: variables.$main-color-dark;
         }
 
         .pie-legend-healed {
+            @extend %pie-legend;
             background-color: variables.$main-color;
         }
 
         .pie-legend-positives {
+            @extend %pie-legend;
             background-color: variables.$main-color-light;
         }
     }
@@ -43,11 +46,66 @@
 }
 
 .total-data-pie {
-    max-height: 24rem;
     display: flex;
     justify-content: center;
     background-color: variables.$main-color-light;
     padding: 1.2rem;
     border-radius: 12px;
     
+}
+
+.italy-map {
+    border: 3px solid variables.$main-color;
+    padding: 1.2rem;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+
+    p {
+        margin-bottom: 2rem;
+        font-weight: 600;
+        font-size: 1.2rem;
+    }
+
+    svg {
+
+        path {
+            fill: variables.$main-color-dark;
+            transition: 400ms;
+            cursor: pointer;
+        }
+
+        path.region-active {
+            fill: variables.$main-color;
+        }
+
+        path:hover {
+            fill: variables.$main-color-light;
+        }
+    }
+}
+
+#region-data {
+
+    background-color: variables.$main-color-light;
+    border-radius: 12px;
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 3rem;
+
+
+    h3 {
+        margin-bottom: 1.2rem;
+    }
+
+    p {
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+
+    p:last-child {
+        margin-bottom: 0;
+    }
 }

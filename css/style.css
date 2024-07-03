@@ -99,7 +99,7 @@ aside {
 .total-data p span[id] {
   color: rgb(9, 93, 126);
 }
-.total-data p [class|=pie-legend] {
+.total-data p .pie-legend-positives, .total-data p .pie-legend-healed, .total-data p .pie-legend-dead {
   width: 0.65rem;
   height: 0.65rem;
   display: inline-block;
@@ -119,12 +119,55 @@ aside {
 }
 
 .total-data-pie {
-  max-height: 24rem;
   display: flex;
   justify-content: center;
   background-color: rgb(159, 178, 185);
   padding: 1.2rem;
   border-radius: 12px;
+}
+
+.italy-map {
+  border: 3px solid rgb(9, 93, 126);
+  padding: 1.2rem;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+}
+.italy-map p {
+  margin-bottom: 2rem;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+.italy-map svg path {
+  fill: rgb(6, 59, 80);
+  transition: 400ms;
+  cursor: pointer;
+}
+.italy-map svg path.region-active {
+  fill: rgb(9, 93, 126);
+}
+.italy-map svg path:hover {
+  fill: rgb(159, 178, 185);
+}
+
+#region-data {
+  background-color: rgb(159, 178, 185);
+  border-radius: 12px;
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3rem;
+}
+#region-data h3 {
+  margin-bottom: 1.2rem;
+}
+#region-data p {
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+#region-data p:last-child {
+  margin-bottom: 0;
 }
 
 body {
@@ -152,7 +195,7 @@ main h1 {
   font-size: 1.6rem;
   margin-bottom: 0.4rem;
 }
-main section {
+main section.dashboard {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 1.8rem;
