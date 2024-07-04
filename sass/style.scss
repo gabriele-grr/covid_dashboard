@@ -31,6 +31,14 @@ main {
         margin-bottom: 0.4rem;
     }
 
+    h3, h4 {
+        margin-bottom: 1.2rem;
+    }
+
+    h4 {
+        font-size: 1rem;
+    }
+
     section.dashboard {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;

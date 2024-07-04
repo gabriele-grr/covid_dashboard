@@ -65,20 +65,21 @@ fetch('https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-json/dpc-c
 
           let regionData = document.getElementById('region-data');
 
-          let regionNewPositives = sorted.reverse()
+          let regionNewPositives = sorted
                                   .filter(el => el.denominazione_regione == regionSelectedName)
-                                  .map(el => [el.data, el.nuovi_positivi]);
+                                  .map(el => [el.data, el.nuovi_positivi])
+                                  .reverse();
           
           let regionNewPositivesDate = regionNewPositives.map(el => el[0]).map(el => el.split("T")[0].split("-").reverse().join("/"));
 
-          let maxRegionNewPositives = Math.max(...regionNewPositives.map(el => el[1]));
+          console.log(regionNewPositives);
 
           let regionChartCanvas = document.getElementById('region-data-chart');
           let regionChartParent = document.getElementById('region-data-chart-container');
 
-          // Destroy previous chart instance if it exists
+          
           if (regionChartCanvas) {
-            regionChartCanvas.remove(); // Remove the canvas element
+            regionChartCanvas.remove();
             let newCanvas = document.createElement('canvas');
             newCanvas.id = 'region-data-chart';
             regionChartParent.appendChild(newCanvas);
