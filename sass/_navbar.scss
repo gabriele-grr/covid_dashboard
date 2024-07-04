@@ -16,13 +16,14 @@ aside {
     .logo {
 
         margin-bottom: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
         img {
             height: 2rem;
             width: 2rem;
-            display: inline;
             position: relative;
-            top: 8px;
             margin-right: 0.3rem;
         }
 

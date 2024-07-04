@@ -39,10 +39,88 @@ main {
         font-size: 1rem;
     }
 
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .theme-toggler {
+            background-color: variables.$main-color;
+            border-radius: 12px;
+            width: 3.6rem;
+            height: 1.7rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+
+            span.theme-btn {
+                font-size: 1.2rem;
+                width: 50%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .theme-active {
+                background-color: variables.$main-color-light;
+                border-radius: 12px;
+            }
+        }
+
+        
+    }
+
     section.dashboard {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas:
+            "total-col total-data-pie italy-map"
+            "region-area region-area italy-map";
+        grid-template-columns: 1.3fr 10rem 1.7fr ;
+        grid-template-rows: 10rem auto;
         gap: 1.8rem;
         margin-top: 1.8rem;
+        overflow-y: scroll;
+        max-height: 80vh;
+    }
+
+
+
+    @media screen and (min-width: 768px) and (max-width: 1439px) {
+        section.dashboard {
+            grid-template-areas: 
+            "total-col total-data-pie"
+            "italy-map italy-map"
+            "region-area region-area";
+            grid-template-columns: auto 10rem;
+        }
     }
 }
+
+@media screen and (max-width: 767px) {
+    .container {
+        width: 100%;
+        grid-template-columns: auto;
+    }
+
+    main {
+
+        margin-top: 0;
+
+        header {
+            padding: 1.2rem;
+        }
+
+        section.dashboard {
+            display: flex;
+            flex-direction: column;
+            padding: 0 1.2rem;
+            margin-top: 1rem;
+        }
+    }
+
+    aside {
+        display: none;
+    }
+} 

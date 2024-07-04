@@ -1,12 +1,16 @@
 @use 'variables';
 @use 'reset';
 
+.total-col {
+    grid-area: total-col;
+}
+
 .total-data {
-    width: 100%;
     border: 3px solid variables.$main-color;
     border-radius: 12px;
     padding: 1.2rem;
-    margin-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
 
     p {
         margin-bottom: 1rem;
@@ -48,9 +52,17 @@
 .total-data-pie {
     display: flex;
     justify-content: center;
-    background-color: variables.$main-color-light;
+    align-items: center;
+    
+    grid-area: total-data-pie;
+
+    #pie-chart {
+        max-width: 12rem;
+        max-height: 12rem;
+        background-color: variables.$main-color-light;
     padding: 1.2rem;
     border-radius: 12px;
+    }
     
 }
 
@@ -60,6 +72,14 @@
     border-radius: 12px;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    grid-area: italy-map;
+
+    div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
     p {
         margin-bottom: 2rem;
@@ -69,10 +89,13 @@
 
     svg {
 
+        max-height: 55rem;
+
         path {
             fill: variables.$main-color-dark;
             transition: 400ms;
             cursor: pointer;
+            stroke: variables.$background-main-color;
         }
 
         path.region-active {
@@ -85,6 +108,13 @@
     }
 }
 
+.region-area {
+    grid-area: region-area;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 #region-data {
 
     background-color: variables.$main-color-light;
@@ -93,6 +123,7 @@
     display: flex;
     flex-direction: column;
     margin-bottom: 3rem;
+    color: variables.$text-main-color;
 
     p {
         margin-bottom: 1rem;
